@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Raylanz Recipes</title>
+  <link rel="stylesheet" href="css/style.css">
+  <style>
+    /* Additional CSS styles for the transition animation */
+    .container.move-up {
+      justify-content: center;
+    }
+
+    .welcome-text.fade-out {
+      opacity: 0;
+      transition: opacity 1s ease-out;
+    }
+
+    #button1.move-up {
+      transform: translateY(-100%);
+      transition: transform 1s ease-out;
+    }
+
+    .recipe-images.fade-in {
+      position: fixed;
+      top: 70%;
+      left: 30%;
+      transform: translate(-50%, 0%);
+      margin-top: 20px;
+      opacity: 1;
+      transition: margin-top 1.5s ease, opacity 1.5s ease;
+    }
+
+  </style>
+</head>
+<body>
+  <div class="container">
+    <div class="navigation-bar">
+        <a href="#"><b>Help</b></a>
+        <a href="#"><b>About Us</b></a>
+    </div>
+
+    <div class="welcome-text">
+      <h1>Raylanz Recipe Haven</h1>
+      <p>Where Flavor Meets Creativity</p>
+      <button id="button1">View Recipes</button>
+    </div>
+
+    <div class="recipe-images hidden">
+        <a href="recipe1.html"><img src="css/1.jpg" alt="Recipe 1"></a>
+        <a href="recipe2.html"><img src="css/2.jpg" alt="Recipe 2"></a>
+        <a href="recipe3.html"><img src="css/3.jpg" alt="Recipe 3"></a>
+        <a href="recipe4.html"><img src="css/4.jpg" alt="Recipe 4"></a>
+        <a href="recipe5.html"><img src="css/5.jpg" alt="Recipe 5"></a>
+      </div>
+  </div>
+
+  <script>
+    document.getElementById('button1').addEventListener('click', function() {
+      document.querySelector('.welcome-text').classList.add('fade-out');
+      document.querySelector('#button1').classList.add('move-up');
+      document.querySelector('.recipe-images').classList.remove('hidden');
+      document.querySelector('.recipe-images').classList.add('fade-in');
+    });
+  </script>
+</body>
+</html>
